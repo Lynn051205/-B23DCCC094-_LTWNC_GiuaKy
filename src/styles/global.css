@@ -1,0 +1,151 @@
+:root {
+  color-scheme: light;
+
+  --bg: #faf8fc;
+  --surface: #ffffff;
+  --surface-muted: #f6f2fa;
+  --border: #ebe5f0;
+  --border-strong: #d7cddd;
+
+  --text: #302b38;
+  --text-muted: #716b79;
+  --text-subtle: #9b94a3;
+
+  --accent: #79669b;
+  --accent-hover: #62507f;
+  --accent-soft: #eee8f6;
+  --on-accent: #ffffff;
+
+  --danger: #c84e68;
+  --danger-soft: #fbe9ee;
+  --warning: #b77a32;
+  --warning-soft: #fbf0df;
+  --success: #4e8a68;
+
+  --cat-it: #8873ad;
+  --cat-econ: #c08a5b;
+  --cat-lang: #c27692;
+
+  --sidebar-bg: #f1edf6;
+  --sidebar-text: #40384c;
+  --sidebar-muted: #81788d;
+  --sidebar-active: #79669b;
+  --sidebar-mark-bg: #e5dcf0;
+  --sidebar-mark-text: #6d5a8d;
+  --sidebar-border: #e2dbea;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --shadow-pop: 0 12px 32px rgb(31 41 55 / 0.12);
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #1d1922;
+  --surface: #29232f;
+  --surface-muted: #352d3d;
+  --border: #443a4d;
+  --border-strong: #5a4d64;
+
+  --text: #f5f0f8;
+  --text-muted: #c4bacd;
+  --text-subtle: #a093aa;
+
+  --accent: #c3a9e5;
+  --accent-hover: #d4c0ed;
+  --accent-soft: #453653;
+  --on-accent: #241d2c;
+
+  --danger: #f18ba0;
+  --danger-soft: #472b37;
+  --warning: #e7b978;
+  --warning-soft: #453727;
+  --success: #8bc49b;
+
+  --cat-it: #c3a9e5;
+  --cat-econ: #e7b978;
+  --cat-lang: #e4a1b8;
+
+  --sidebar-bg: #27212e;
+  --sidebar-text: #f5f0f8;
+  --sidebar-muted: #b5a9c1;
+  --sidebar-active: #5c496f;
+  --sidebar-mark-bg: #3d3249;
+  --sidebar-mark-text: #d6c2f0;
+  --sidebar-border: #453a50;
+
+  --shadow-pop: 0 12px 32px rgb(0 0 0 / 0.3);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

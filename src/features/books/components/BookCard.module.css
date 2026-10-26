@@ -1,0 +1,145 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--book-columns);
+  align-items: center;
+  gap: 13px;
+  padding: 14px 15px;
+  transition: background-color 0.15s;
+}
+
+.card:hover {
+  background: color-mix(in srgb, var(--surface-muted) 60%, transparent);
+}
+
+/* Gáy sách: vạch màu theo thể loại */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+  background: var(--tone);
+}
+
+.main {
+  min-width: 0;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.badge {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.author {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.author span {
+  color: var(--text-subtle);
+  font-size: 10px;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+.category::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--tone);
+}
+
+.year {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stock {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.stockValue {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stockLabel {
+  color: var(--text-subtle);
+  font-size: 12px;
+}
+
+.outOfStock .stockValue,
+.outOfStock .stockLabel {
+  color: var(--danger);
+}
+
+.outOfStock .title {
+  color: var(--text-muted);
+}
+
+.action {
+  justify-self: end;
+}
+
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+      'main main main main'
+      'category year stock action';
+    gap: 10px 12px;
+    padding: 15px 14px 15px 17px;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .category {
+    grid-area: category;
+  }
+
+  .year {
+    grid-area: year;
+  }
+
+  .stock {
+    grid-area: stock;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .action {
+    grid-area: action;
+  }
+}

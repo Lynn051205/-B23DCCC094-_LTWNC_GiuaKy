@@ -1,0 +1,53 @@
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: min(460px, calc(100vw - 32px));
+  padding: 12px 10px 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--warning);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-pop);
+  transform: translateX(-50%);
+  animation: rise 0.18s ease-out;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--warning);
+}
+
+.message {
+  flex: 1;
+  font-size: 14px;
+}
+
+.close {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-subtle);
+}
+
+.close:hover {
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}

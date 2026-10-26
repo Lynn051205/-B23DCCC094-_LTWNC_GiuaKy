@@ -1,0 +1,12 @@
+/* Mỗi thể loại một màu, dùng qua biến --tone ở component */
+.it {
+  --tone: var(--cat-it);
+}
+
+.econ {
+  --tone: var(--cat-econ);
+}
+
+.lang {
+  --tone: var(--cat-lang);
+}
